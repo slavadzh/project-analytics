@@ -6,4 +6,5 @@ import java.util.List;
 
 @Builder
 public record Chapter(String name, List<Task> tasks){
+
 }
