@@ -1,12 +1,12 @@
-package util;
+package analytics.util;
 
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvException;
-import models.Chapter;
-import models.Student;
-import models.Task;
-import models.TaskType;
+import analytics.models.Chapter;
+import analytics.models.Student;
+import analytics.models.Task;
+import analytics.models.TaskType;
 
 import java.io.FileInputStream;
 import java.io.IOException;

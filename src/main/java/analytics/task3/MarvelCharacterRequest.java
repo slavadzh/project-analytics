@@ -1,4 +1,4 @@
-package task3;
+package analytics.task3;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

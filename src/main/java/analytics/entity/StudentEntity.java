@@ -1,5 +1,7 @@
-package entity;
+package analytics.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,14 +22,14 @@ public class StudentEntity {
 
     private String name;
 
-//    @ManyToOne
-//    @JoinColumn(name = "group_id")
-//    private GroupEntity group;
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    @JsonIgnore
+    private GroupEntity group;
 
     private Integer finalScore;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "student_id") // Связывает Chapters с конкретным студентом
+    @JoinColumn(name = "student_id")
     private List<ChapterEntity> scoreForChapters;
-    // Геттеры, сеттеры, конструкторы
 }

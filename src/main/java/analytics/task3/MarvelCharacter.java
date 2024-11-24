@@ -1,4 +1,4 @@
-package task3;
+package analytics.task3;
 import lombok.Getter;
 import lombok.Setter;
 

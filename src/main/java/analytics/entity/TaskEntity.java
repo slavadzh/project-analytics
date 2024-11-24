@@ -1,11 +1,11 @@
-package entity;
+package analytics.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import models.TaskType;
+import analytics.models.TaskType;
 
 @Entity
 @Getter

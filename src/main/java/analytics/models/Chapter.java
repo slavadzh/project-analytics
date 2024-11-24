@@ -1,10 +1,14 @@
-package models;
+package analytics.models;
 
-import lombok.Builder;
+import lombok.*;
 
 import java.util.List;
 
-@Builder
-public record Chapter(String name, List<Task> tasks){
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Chapter{
+    private String name;
+    private List<Task> tasks;
 }

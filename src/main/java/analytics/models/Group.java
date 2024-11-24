@@ -1,9 +1,15 @@
-package models;
+package analytics.models;
 
 import lombok.*;
 
 import java.util.List;
 
-@Builder
-public record Group(String name, List<Student> students) {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Group{
+    private String name;
+    private List<Student> students;
+
 }

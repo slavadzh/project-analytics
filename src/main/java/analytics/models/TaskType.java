@@ -1,4 +1,4 @@
-package models;
+package analytics.models;
 
 public enum TaskType {
     HOMEWORK,

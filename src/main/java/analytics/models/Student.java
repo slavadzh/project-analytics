@@ -1,10 +1,17 @@
-package models;
+package analytics.models;
 
 import lombok.*;
 
 import java.util.List;
 
-@Builder
-public record Student(String name, String id, String group, Integer finalScore, List<Chapter> scoreForChapters){
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Student{
+    private String name;
+    private String id;
+    private String group;
+    private Integer finalScore;
+    private List<Chapter> scoreForChapters;
 }
