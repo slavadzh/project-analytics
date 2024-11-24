@@ -17,7 +17,7 @@ import java.util.Objects;
 
 public class Parser {
 
-    public static List<String[]> readCSVFile(String file){
+    public static List<Student> readCSVFile(String file){
         var parser = new CSVParserBuilder()
                 .withSeparator(';')
                 .build();
@@ -25,7 +25,7 @@ public class Parser {
                 new InputStreamReader(new FileInputStream(file), "windows-1251"))
                 .withCSVParser(parser)
                 .build()) {
-            return reader.readAll();
+            return parseStudents(reader.readAll());
         } catch (IOException | CsvException e) {
             throw new RuntimeException(e);
         }

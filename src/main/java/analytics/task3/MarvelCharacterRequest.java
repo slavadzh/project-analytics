@@ -24,7 +24,7 @@ public class MarvelCharacterRequest {
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         long timestamp = Instant.now().getEpochSecond();
-        String hash = generateHash(timestamp, PRIVATE_KEY, PUBLIC_KEY);
+        String hash = generateHash(timestamp);
         String name = "Iron man";
 
         String url = BASE_URL + "?name=" + name.replace(" ", "%20") +
@@ -59,8 +59,8 @@ public class MarvelCharacterRequest {
     //Логика создания хэша: 1. Складываю timestamp + privateKey + publicKey
     //2.Хэширую с помощью MD5(потому что marvel api с ней работает)
     //3.Конвертирую в 16ричное число
-    private static String generateHash(long timestamp, String privateKey, String publicKey) throws NoSuchAlgorithmException {
-        String value = timestamp + privateKey + publicKey;
+    private static String generateHash(long timestamp) throws NoSuchAlgorithmException {
+        String value = timestamp + MarvelCharacterRequest.PRIVATE_KEY + MarvelCharacterRequest.PUBLIC_KEY;
         MessageDigest md = MessageDigest.getInstance("MD5");
         byte[] hashBytes = md.digest(value.getBytes());
         StringBuilder hexString = new StringBuilder();
