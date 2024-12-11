@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart</title>
+    <style>
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            background-color: #f9f9f9;
+        }
+        .bar {
+            width: 40px;
+            background-color: #007bff;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center;">Bar Chart</h1>
+<div class="bar-chart">
+    <!-- Генерация гистограммы -->
+    <div th:each="group : ${histogram.groups}"
+         th:style="'height:' + ${group.value} + 'px;'"
+         class="bar"
+         th:text="${group.value}">
+    </div>
+</div>
+</body>
+</html>
